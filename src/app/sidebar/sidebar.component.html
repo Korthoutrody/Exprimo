@@ -1,0 +1,25 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="home" [class.activated]="currentUrl == '/home'">
+        <i class="material-icons">home</i>
+      </a>
+    </li>
+    <li>
+    <a routerLink="typegame" [class.activated]="currentUrl == '/typegame'">
+      <i class="material-icons">games</i>
+    </a>
+  </li>
+    <li>
+      <a routerLink="guessgame" [class.activated]="currentUrl == '/guessgame'">
+        <i class="material-icons">games</i>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="login" [class.activated]="currentUrl == '/login'">
+        <i class="material-icons">settings_power</i>
+      </a>
+    </li>
+  </ul>
+</nav>

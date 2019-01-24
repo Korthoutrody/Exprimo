@@ -1,0 +1,45 @@
+﻿<div class="holder">
+<div class="stuff">
+<div class="col-md-6 col-md-offset-3 stuff2">
+  <h2>REGISTER</h2>
+  <!-- NICKNAME -->
+  <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate> <!-- && register() -->
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+      <label for="nickname">Nickname</label>
+      <input type="text" class="form-control" name="nickname" [(ngModel)]="model.nickname" #nickname="ngModel" required />
+      <div *ngIf="f.submitted && !nickname.valid" class="help-block">You have a name, silly! </div>
+    </div>
+
+    <!-- USERNAME -->
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+      <label for="username">Email</label>
+      <input type="text" class="form-control" name="username"
+             [(ngModel)]="model.username" #username="ngModel" required minlength="4" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+      <div *ngIf="username.touched && !username.pristine &&!username.valid" class="help-block">This is not a valid email</div>
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+             required minlength="6" validateEqual="confirmpassword" reverse="true"/>
+      <div *ngIf="password.touched && !password.pristine && !password.valid" class="help-block">The password has to contain 6 or more characters</div>
+    </div>
+
+    <!-- CONFIRM PASSWORD-->
+    <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !confirmpassword.valid }">
+      <label for="confirmpassword">Confirm password</label>
+      <input type="password" class="form-control" name="password"
+             [(ngModel)]="model.confirmpassword" #confirmpassword="ngModel" required validateEqual="password"/>
+      <div *ngIf="confirmpassword.touched && !confirmpassword.pristine && !confirmpassword.valid && confirmpassword != password" class="help-block">The passwords do not match</div>
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="loading" class="btn btn-primary">Register</button>
+      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+    </div>
+  </form>
+</div>
+</div>
+</div>

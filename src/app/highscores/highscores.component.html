@@ -1,0 +1,12 @@
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <div ng-If="highscoresArray" class="container">
+
+    <div class="grid">
+      <div class="row">
+        <div *ngFor="let word of highscoresArray;">
+            {{word}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+﻿<script src="../_models/user.ts"></script>
+
+<div class="col-md-6 col-md-offset-3">
+<div class="container">
+  <div class="childContainer">
+  <div class="row">
+    <div class="col">
+      <h3>Profile:</h3>
+      <p>Name: {{currentUser.nickname}} <br>
+        E-mail: {{currentUser.username}}</p>
+    </div>
+    <div class="col">
+      <h3>Other users:</h3>
+      <ul>
+        <li *ngFor="let user of users">
+        {{user.nickname}}
+      </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="footer"> </div>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
