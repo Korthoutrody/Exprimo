@@ -1,0 +1,26 @@
+
+.expheader {
+  background: url("../assets/exprimoheader.png");
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bg {
+  /* The image used */
+  background-image: url("../assets/background4.png");
+
+  /* Full height */
+
+  height: 100vh;
+  width: 100vw;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.childContainer {
+  margin-top: 5%;
+}

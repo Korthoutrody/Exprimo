@@ -1,0 +1,5 @@
+﻿{
+    "connectionString": "mongodb://localhost:27017/projectdb2",
+    "apiUrl": "http://localhost:4000",
+    "secret": "08582039154834400624"
+}
